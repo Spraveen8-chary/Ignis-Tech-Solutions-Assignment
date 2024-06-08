@@ -1,13 +1,13 @@
 # Ignis-Tech-Solutions-Assignment
 
-## Assignment Problem Statement
+# Assignment Problem Statement
 Write a Django rest framework API that will take in a list of crypto coin acronyms, scrape the website data, and return the JSON response.
 
-## Solution Analysis
-# Objective
+# Solution Analysis
+## Objective
 Developed a Django REST Framework API that accepts a list of cryptocurrency acronyms, scrapes data from a specified website, and returns the data in JSON format.
 
-# Libraries used
+## Libraries used
 - djangorestframework
 - celery
 - requests
@@ -15,17 +15,21 @@ Developed a Django REST Framework API that accepts a list of cryptocurrency acro
 - uuid
 - beautifulsoup
 - json
-  
-Steps to Implement
-Project Setup
 
+## Benefits
+- Scalability: Celery and BeautifulSoup allow the scraping tasks to run asynchronously, making the API scalable.
+- Modularity: Each component (API, scraping, task management) is modular, making the system easy to maintain and extend.
 
-# Benefits
-Scalability: Using Celery and BeautifulSoup allows the scraping tasks to run asynchronously, making the API scalable.
-Modularity: Each component (API, scraping, task management) is modular, making the system easy to maintain and extend.
+## URL Allotted for Scraping Data
+```https://coinmarketcap.com/```
 
+![Screenshot (347)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/9c7948ff-28a2-470c-a05b-a5a7220c92cf)
 
+from the above extracting below data
 
+![Screenshot 2024-06-08 151708](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/3ffd5756-3ef6-4e16-aa9b-e737ac1d7544)
+
+![Screenshot 2024-06-08 152145](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/d125afec-8a19-47a6-aab7-490bb63ae2b2)
 
 ![Screenshot (336)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/704ff3b2-232f-41f4-9624-0b73837d1ccf)
 
