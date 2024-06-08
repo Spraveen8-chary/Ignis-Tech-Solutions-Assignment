@@ -25,11 +25,32 @@ Developed a Django REST Framework API that accepts a list of cryptocurrency acro
 
 ![Screenshot (347)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/9c7948ff-28a2-470c-a05b-a5a7220c92cf)
 
-from the above extracting below data
+- Data to be Scraped.
 
 ![Screenshot 2024-06-08 151708](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/3ffd5756-3ef6-4e16-aa9b-e737ac1d7544)
 
 ![Screenshot 2024-06-08 152145](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/d125afec-8a19-47a6-aab7-490bb63ae2b2)
+
+```
+import requests
+from bs4 import BeautifulSoup
+
+class CoinMarketCapScraper:
+    BASE_URL = "https://coinmarketcap.com/currencies/"
+
+    def __init__(self):
+        pass
+
+    def get_coin_data(self, coin_name):
+        url = self.BASE_URL + coin_name + "/"
+        response = requests.get(url)
+        if response.status_code != 200:
+            return {"error": f"Failed to retrieve data for {coin_name}"}
+
+        soup = BeautifulSoup(response.content, 'html.parser')
+        data = self.parse_coin_data(soup)
+        return data
+```
 
 ![Screenshot (336)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/704ff3b2-232f-41f4-9624-0b73837d1ccf)
 
