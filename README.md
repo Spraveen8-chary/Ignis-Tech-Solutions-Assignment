@@ -4,7 +4,25 @@
 Write a Django rest framework API that will take in a list of crypto coin acronyms, scrape the website data, and return the JSON response.
 
 ## Solution Analysis
+# Objective
+Developed a Django REST Framework API that accepts a list of cryptocurrency acronyms, scrapes data from a specified website, and returns the data in JSON format.
 
+# Libraries used
+- djangorestframework
+- celery
+- requests
+- selenium
+- uuid
+- beautifulsoup
+- json
+  
+Steps to Implement
+Project Setup
+
+
+# Benefits
+Scalability: Using Celery and BeautifulSoup allows the scraping tasks to run asynchronously, making the API scalable.
+Modularity: Each component (API, scraping, task management) is modular, making the system easy to maintain and extend.
 
 
 
