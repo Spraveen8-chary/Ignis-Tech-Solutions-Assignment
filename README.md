@@ -51,8 +51,13 @@ Developed a Django REST Framework API that accepts a list of cryptocurrency acro
 - Now give the input of coin name separated by a comma (,) Example: bitcoin, notcoin, duko
 - Then after submitting the coin name it will be redirected to the final page.
 
+## OUTPUT
+
+- Coin Input Page
+
 ![Screenshot (336)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/704ff3b2-232f-41f4-9624-0b73837d1ccf)
 
+- Final response page in tabular form
 ![Screenshot (338)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/8dda33d3-d8dd-4434-916d-6c53c24a5828)
 
 ![Screenshot (339)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/dab38c1d-f631-4738-9978-0088624e3444)
@@ -61,8 +66,11 @@ Developed a Django REST Framework API that accepts a list of cryptocurrency acro
 
 ![Screenshot (341)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/1eb4c8e2-1eb6-4f82-955d-5cc7c40e82e2)
 
+- JOSN response in required form along with job_id
 ![Screenshot (342)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/484ff9e9-6f03-4d31-b7c8-74e69abbac87)
 
+## Terminal OUTPUT
+- JSON response
 ![Screenshot (343)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/dbadc57c-1e0e-41e3-a391-953e87b334d4)
 
 ![Screenshot (344)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/9b2decf6-e908-43e5-93e1-57c34a418a00)
