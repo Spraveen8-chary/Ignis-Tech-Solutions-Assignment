@@ -50,6 +50,7 @@ Developed a Django REST Framework API that accepts a list of cryptocurrency acro
 - Now some welcome text will be shown ignore it and type ```http://127.0.0.1:8000/api/taskmanager/start_scraping/``` in the url it will be navigated to the input page.
 - Now give the input of coin name separated by a comma (,) Example: bitcoin, notcoin, duko
 - Then after submitting the coin name it will be redirected to the final page.
+- Finally the response will be stored in the CSV file.
 
 ## OUTPUT
 
