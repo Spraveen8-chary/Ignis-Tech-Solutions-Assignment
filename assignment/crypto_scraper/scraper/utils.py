@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+import os
+import csv
 
 class CoinMarketCapScraper:
     BASE_URL = "https://coinmarketcap.com/currencies/"
@@ -125,12 +127,53 @@ class CoinMarketCapScraper:
         data['socials'] = socials
 
         return data
+    
+    def drop_data_into_csv(self, data, file_path='crypto_data.csv'):
+       
+        file_exists = os.path.isfile(file_path)
+        
+        with open(file_path, mode='a', newline='') as file:
+            writer = csv.writer(file)
+            
+            if not file_exists:
+                writer.writerow([
+                    "job_id", "coin", "price", "price_change", "market_cap", "market_cap_rank",
+                    "volume", "volume_rank", "volume_change", "circulating_supply", "total_supply",
+                    "dilute_market_cap", "contract_name", "contract_address", "official_link_website",
+                    "official_link_whitepaper", "social_twitter", "social_telegram"
+                ])
+            
+            for task in data['tasks']:
+                coin = task["coin"]
+                output = task["output"]
+                row = [
+                    data["job_id"][0],
+                    coin,
+                    output["price"],
+                    output["price_change"],
+                    output["market_cap"],
+                    output["market_cap_rank"],
+                    output["volume"],
+                    output["volume_rank"],
+                    output["volume_change"],
+                    output["circulating_supply"],
+                    output["total_supply"],
+                    output["dilute_market_cap"],
+                    output["contracts"]["name"],
+                    output["contracts"]["address"],
+                    next((link["link"] for link in output["official_links"] if link["name"] == "website"), ""),
+                    next((link["link"] for link in output["official_links"] if link["name"] == "whitepaper"), ""),
+                    next((social["url"] for social in output["socials"] if social["name"] == "twitter"), ""),
+                    next((social["url"] for social in output["socials"] if social["name"] == "telegram"), "")
+                ]
+                writer.writerow(row)
 
     def get_multiple_coins_data(self, coin_names):
-        result = {"job_id" : [], "tasks": []}
+        result = { "job_id" : [], "tasks": []}
         for coin in coin_names:
             coin_data = self.get_coin_data(coin)
             coin = coin_data['coin']
             del coin_data['coin']
             result['tasks'].append({"coin": coin, "output": coin_data})
+        
         return result
