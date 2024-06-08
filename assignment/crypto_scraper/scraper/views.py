@@ -19,7 +19,7 @@ def generate_job_id(request):
     global job_id
     job_id = str(uuid.uuid4())
     return HttpResponse(job_id)
-
+    
 def display_results(request):
     if request.method == 'POST':
         global data, job_id
@@ -33,6 +33,7 @@ def display_results(request):
         # print(data)
         data1 = json.dumps(data, indent=4)
         print(data1)
+        scraper.drop_data_into_csv(data)
         return render(request, 'scraper/results.html', {'data': data })   
     else:  
         return HttpResponse("Method not allowed", status=405)
