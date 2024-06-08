@@ -1,5 +1,14 @@
 # Ignis-Tech-Solutions-Assignment
 
+## Assignment Problem Statement
+Write a Django rest framework API that will take in a list of crypto coin acronyms, scrape the website data, and return the JSON response.
+
+## Solution Analysis
+
+
+
+
+
 ![Screenshot (336)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/704ff3b2-232f-41f4-9624-0b73837d1ccf)
 
 ![Screenshot (338)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/8dda33d3-d8dd-4434-916d-6c53c24a5828)
