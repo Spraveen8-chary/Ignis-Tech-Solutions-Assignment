@@ -33,10 +33,24 @@ Developed a Django REST Framework API that accepts a list of cryptocurrency acro
 
 ## Functionality Overview
 - ```http://127.0.0.1:8000/api/taskmanager/start_scraping/```: A homepage to take input of coins that are to be retrieved.
-- ```http://127.0.0.1:8000/api/taskmanager/scraping_status/```: A page where responses are collected from the backend.
-- ```http://127.0.0.1:8000/api/taskmanager/start_scraping/< job_id >/```: A final page where the result is displayed along with job_id in the URL, the response is showcased in table format to understand easily and in the bottom complete JSON response is printed.
-- ```terminal```: In the terminal actual JSON required output is printed you can observe them in the output section.
   
+- ```http://127.0.0.1:8000/api/taskmanager/scraping_status/```: A page where responses are collected from the backend.
+  
+- ```http://127.0.0.1:8000/api/taskmanager/start_scraping/< job_id >/```: A final page where the result is displayed along with job_id in the URL, the response is showcased in tabular format to understand easily and in the bottom complete JSON response is printed.
+  
+- ```terminal```: In the terminal actual JSON required output is printed you can observe them in the output section.
+
+## Execution Procedure
+- Initially clone the git repo ```https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/```
+- Extract the zip folder of your project folder.
+- Open the ```command prompt``` at crypto_scraper folder and download the required libraries using this command ```pip install -r requirements.txt```
+- After downloading all the dependencies simply type this command ```python manage.py migrate```
+- Now we'll run our application using this command for running the application ```python manage.py runserver```
+- It returns the ```http://127.0.0.1:8000``` in your terminal, copy that and paste it into the browser.
+- Now some welcome text will be shown ignore it and type ```http://127.0.0.1:8000/api/taskmanager/start_scraping/``` in the url it will be navigated to the input page.
+- Now give the input of coin name separated by a comma (,) Example: bitcoin, notcoin, duko
+- Then after submitting the coin name it will be redirected to the final page.
+
 ![Screenshot (336)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/704ff3b2-232f-41f4-9624-0b73837d1ccf)
 
 ![Screenshot (338)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/8dda33d3-d8dd-4434-916d-6c53c24a5828)
