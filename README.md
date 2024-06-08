@@ -35,6 +35,7 @@ Developed a Django REST Framework API that accepts a list of cryptocurrency acro
 - ```http://127.0.0.1:8000/api/taskmanager/start_scraping/```: A homepage to take input of coins that are to be retrieved.
 - ```http://127.0.0.1:8000/api/taskmanager/scraping_status/```: A page where responses are collected from the backend.
 - ```http://127.0.0.1:8000/api/taskmanager/start_scraping/< job_id >/```: A final page where the result is displayed along with job_id in the URL, the response is showcased in table format to understand easily and in the bottom complete JSON response is printed.
+- ```terminal```: In the terminal actual JSON required output is printed you can observe them in the output section.
   
 ![Screenshot (336)](https://github.com/Spraveen8-chary/Ignis-Tech-Solutions-Assignment/assets/108536707/704ff3b2-232f-41f4-9624-0b73837d1ccf)
 
