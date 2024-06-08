@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraper Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="container">
+
+        
+        <a href="{% url 'scraping_status' job_id=data.job_id.0 %}" id="scrapingLink"></a>
+        <h1>Job ID: {{ data.job_id.0 }}</h1>
+        {% for task in data.tasks %}
+        <h2>Task Information</h2>
+        <ul>
+            <li><b>Coin                 : </b>{{ task.coin }}</li>
+            <li><b>Price                : </b>{{ task.output.price }}</li>
+            <li><b>Price Change         : </b>{{ task.output.price_change }}</li>
+            <li><b>Market Cap           : </b>{{ task.output.market_cap }}</li>
+            <li><b>Market Cap Rank      : </b>{{ task.output.market_cap_rank }}</li>
+            <li><b>Volume               : </b>{{ task.output.volume }}</li>
+            <li><b>Volume Rank          : </b>{{ task.output.volume_rank }}</li>
+            <li><b>Volume Change        : </b>{{ task.output.volume_change }}</li>
+            <li><b>Circulating Supply   : </b>{{ task.output.circulating_supply }}</li>
+            <li><b>Total Supply         : </b>{{ task.output.total_supply }}</li>
+            <li><b>Dilute Market Cap    : </b>{{ task.output.dilute_market_cap }}</li>
+        </ul>
+
+        <h3>Contracts</h3>
+        <p><b>Name:    </b>{{ task.output.contracts.name }}</p>
+        <p><b>Address: </b>{{ task.output.contracts.address }}</p>
+
+        <h3>Official Links</h3>
+        <ul>
+            {% for link in task.output.official_links %}
+            <li><b>{{ link.name.capitalize }}: </b><a href="{{ link.link }}">{{ link.link }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <h3>Socials</h3>
+        <ul>
+            {% for social in task.output.socials %}
+            <li><b>{{ social.name.capitalize }}:</b> <a href="{{ social.url }}">{{ social.url }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+
+    <div class="container">
+        <h2>Complete JSON Data</h2>
+        <p>{{ data|safe }}</pre>
+    </div>
+
+
+    
+
+    <script>
+      
+
+
+    document.addEventListener('DOMContentLoaded', function(){
+        const link = document.getElementById('scrapingLink');
+        let clickCount = 0;
+
+        function clickLink(){
+            if (clickCount < 3){
+                link.click();
+                clickCount++;
+                console.log(clickCount);
+                setTimeout(clickLink, 20000);
+            }
+        }
+        setTimeout(clickLink, 30000);
+    });
+    </script>
+</body>
+</html>
